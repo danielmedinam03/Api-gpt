@@ -1,0 +1,22 @@
+Explicación del Flujo de Trabajo
+on: push: Este flujo de trabajo se ejecutará en cada push a las ramas main y cualquier rama que comience con feature/.
+
+on: pull_request: También se ejecutará en cada pull request a la rama main.
+
+jobs: Define un trabajo llamado build que se ejecuta en ubuntu-latest.
+
+steps: Los pasos que se seguirán en el flujo de trabajo:
+
+Check out repository: Clona el repositorio.
+
+Set up JDK 17: Configura el JDK 17 usando el setup-java action.
+
+Build with Maven: Ejecuta mvn clean install para compilar el proyecto y descargar dependencias.
+
+Run tests: Ejecuta las pruebas unitarias con mvn test.
+
+Pruebas Fallidas y Bloqueo de Push
+
+Si las pruebas fallan, el estado de la acción se marcará como fallido y el push no se podrá fusionar en la rama main.
+
+GitHub mostrará un estado de "errores de verificación" y bloqueará la fusión hasta que las pruebas pasen.
