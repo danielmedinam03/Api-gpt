@@ -1,0 +1,5 @@
+com.gestion_tareas.demo
+com.gestion_tareas.demo.controller
+com.gestion_tareas.demo.model
+com.gestion_tareas.demo.repository
+com.gestion_tareas.demo.service
